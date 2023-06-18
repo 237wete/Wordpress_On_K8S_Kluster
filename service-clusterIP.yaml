@@ -1,0 +1,18 @@
+Ici, nous definissons un service de type Cluster IP pour la comminucation dans notre cluster
+
+
+--------------------------------------------------------------------------------
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-clusterip-mysql
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql-db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+
+---------------------------------------------------------------------------------
